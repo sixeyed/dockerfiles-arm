@@ -10,15 +10,11 @@ RUN curl -SL -o jenkins.war http://mirrors.jenkins.io/war-stable/$JENKINS_VERSIO
 
 
 # Jenkins
-FROM openjdk:8-jre-alpine
+FROM openjdk:8-jdk-alpine
 
 RUN apk add --no-cache \
-    bash \
-    coreutils \
     git \
-    openssh-client \
-    ttf-dejavu \
-    unzip 
+    ttf-dejavu
 
 ARG JENKINS_VERSION="2.150.3"
 ENV JENKINS_VERSION=${JENKINS_VERSION} \
